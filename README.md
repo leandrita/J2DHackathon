@@ -69,8 +69,10 @@ un videojuego.
 
 ### Desarrolladora
 
-<a href="https://www.linkedin.com/in/leandra-bujhamer/">
-    <img src="https://media.licdn.com/dms/image/D4D03AQHlrb1Uiu9F5A/profile-displayphoto-shrink_200_200/0/1694700343841?e=1701302400&v=beta&t=SM0AjgJLSP87FAY9BEpoP1clf1ckVUva_tOkiyvRFxo"
-        alt="Foto de perfil" width="100">
-    Leandra Bujhamer
-</a>
+ <div>
+        <a href="https://www.linkedin.com/in/leandra-bujhamer/">
+            <img src="https://media.licdn.com/dms/image/D4D03AQHlrb1Uiu9F5A/profile-displayphoto-shrink_200_200/0/1694700343841?e=1701302400&v=beta&t=SM0AjgJLSP87FAY9BEpoP1clf1ckVUva_tOkiyvRFxo"
+                alt="Foto de perfil" width="100">
+            <p>Leandra Bujhamer</p>
+        </a>
+  </div>
