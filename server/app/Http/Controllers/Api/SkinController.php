@@ -44,16 +44,16 @@ class SkinController extends Controller
             return response()->json(['errors' => $validator->errors()], 422);
         }
 
-        $imagePath = $request->file('image')->store('images', 'public');
+        // $imagePath = $request->file('image')->store('images', 'public');
 
-        $imageUrl = asset('storage/' . $imagePath);
+        // $imageUrl = asset('storage/' . $imagePath);
 
         $skin = new Skin();
         $skin->name = $request->name;
         $skin->type = $request->type;
         $skin->price = $request->price;
         $skin->color = $request->color;
-        $skin->image = $imagePath;
+        $skin->image = $request->image;
 
         $request->user()->Skin()->save($skin);
 
@@ -63,7 +63,7 @@ class SkinController extends Controller
             'id' => $skin->id,
             'user_id' => $skin->user_id,
             'username' => $username,
-            'image_url' => $imageUrl,
+            // 'image_url' => $imageUrl,
             'message' => '¡Genial! Acabas de crear tu skin.'
         ], 201);
     }
@@ -126,15 +126,15 @@ class SkinController extends Controller
 
         $skin->fill($request->all());
 
-        if ($request->hasFile('image')) {
-            $imagePath = $request->file('image')->store('images', 'public');
+        // if ($request->hasFile('image')) {
+        //     $imagePath = $request->file('image')->store('images', 'public');
 
-            if ($skin->image) {
-                Storage::disk('public')->delete($skin->image);
-            }
+        //     if ($skin->image) {
+        //         Storage::disk('public')->delete($skin->image);
+        //     }
 
-            $skin->image = $imagePath;
-        }
+        //     $skin->image = $imagePath;
+        // }
 
         $skin->save();
 
