@@ -20,5 +20,4 @@ Route::middleware(['auth:sanctum'])->group(function () {
     Route::get('/skins/myskins', [SkinController::class, 'myskins']);
     Route::put('/skins/color', [SkinController::class, 'color']);
     Route::delete('/skins/delete/{id}', [SkinController::class, 'delete']);
-    // Route::get('/skin/getskin/{id}', [SkinController::class, 'getskin']);
 });
