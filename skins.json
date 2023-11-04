@@ -1,0 +1,47 @@
+[
+    {
+        "id": 10,
+        "name": "Thor",
+        "type": "Strength",
+        "price": "50 euros",
+        "color": "red",
+        "image": null,
+        "user_id": 1
+    },
+    {
+        "id": 11,
+        "name": "Loki",
+        "type": "Intelligence",
+        "price": "150 euros",
+        "color": "red",
+        "image": null,
+        "user_id": 1
+    },
+    {
+        "id": 12,
+        "name": "Ironman",
+        "type": "Perfection",
+        "price": "550 euros",
+        "color": "silver",
+        "image": null,
+        "user_id": null
+    },
+    {
+        "id": 13,
+        "name": "Hulk",
+        "type": "Strength",
+        "price": "100 euros",
+        "color": "violet",
+        "image": null,
+        "user_id": null
+    },
+    {
+        "id": 14,
+        "name": "Captain America",
+        "type": "Intelligence",
+        "price": "350 euros",
+        "color": "blue",
+        "image": null,
+        "user_id": null
+    }
+]
