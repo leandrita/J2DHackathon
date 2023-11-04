@@ -33,7 +33,6 @@ class AuthController extends Controller
             $token = $user->createToken($user->email . '_Token')->plainTextToken;
 
             return response()->json([
-                'status' => 200,
                 'username' => $user->name,
                 'token' => $token,
                 'id' => $user->id,
@@ -66,12 +65,11 @@ class AuthController extends Controller
                 $token = $user->createToken($user->email . '_Token')->plainTextToken;
 
                 return response()->json([
-                    'status' => 200,
                     'username' => $user->name,
                     'token' => $token,
                     'id' => $user->id,
                     'message' => 'Se ha iniciado sesión correctamente!',
-                ]);
+                ], 200);
             }
         }
     }

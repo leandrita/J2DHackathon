@@ -19,6 +19,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        // acá deberia tener una función que lea un archivo json (skins.json) y lo guarde en la base de datos
     }
 }

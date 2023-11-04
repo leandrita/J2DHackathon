@@ -13,17 +13,7 @@ class SkinController extends Controller
 
     public function available()
     {
-        $userId = request()->query('user_id');
-
-        if ($userId) {
-            $skins = Skin::where('user_id', $userId)->get();
-        } else {
-            $skins = Skin::all();
-        }
-
-        foreach ($skins as $skin) {
-            $skin->image_url = asset('storage/' . $skin->image);
-        }
+        $skins = Skin::all();
 
         return response()->json($skins);
     }
@@ -41,9 +31,10 @@ class SkinController extends Controller
         $skin = Skin::find($request->id);
 
         if (!$skin) {
-            return response()->json(['error' => 'El skin no se encontró'], 404);
+            return response()->json(['error' => 'El skin no se encontró'], 400);
         }
 
+        //el skin debe poder comprarse por varios usuarios, por lo tanto se debe crear una tabla nueva que debe contener el user_id y el skin_id (correspondiente al skin comprado por el user)
         if ($skin->user_id !== null) {
             return response()->json(['error' => 'El skin ya ha sido comprado'], 422);
         }
@@ -71,6 +62,7 @@ class SkinController extends Controller
             return response()->json(['error' => 'Debes estar autenticado para actualizar un skin'], 401);
         }
 
+        //buscar el skin por id
         $skinName = $request->input('name');
 
         if (!$skinName) {
@@ -118,18 +110,19 @@ class SkinController extends Controller
         }
 
         if ($skin->user_id !== $user->id) {
-            return response()->json(['error' => 'No tienes permiso para eliminar este skin'], 403);
+            return response()->json(['error' => 'No tienes comprado este skin'], 400);
         }
 
+        //la funcion debe eliminar la entrada correspondiente en la tabla 2
         $skin->user_id = null;
         $skin->save();
 
         return response()->json(['message' => 'Skin eliminado con éxito'], 200);
     }
 
-    public function getskin(Request $request, $id)
+    public function getskin($id)
     {
-        $skin = Skin::with(['user'])->find($id);
+        $skin = Skin::find($id);
 
         if (!$skin) {
             return response()->json(['error' => 'El skin no se encontró'], 404);
