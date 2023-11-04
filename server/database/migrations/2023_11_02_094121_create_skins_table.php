@@ -14,18 +14,12 @@ return new class extends Migration
             $table->string('type');
             $table->string('price');
             $table->string('color');
-            //esta tabla no debe tener el campo user_id ni imagen
-            $table->string('image')->nullable();
-            $table->unsignedBigInteger('user_id')->nullable();
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }
 
     public function down(): void
     {
-        Schema::table('skins', function (Blueprint $table) {
-            $table->dropColumn(['user_id']);
-        });
+        Schema::dropIfExists('skins');
     }
 };

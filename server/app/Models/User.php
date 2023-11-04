@@ -30,8 +30,8 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
-    public function skins()
+    public function purchasedSkins()
     {
-        return $this->hasMany(Skin::class);
+        return $this->hasMany(PurchasedSkin::class);
     }
 }
