@@ -8,6 +8,8 @@
 
 - [Versiones](#versiones)
 
+- [Requisitos](#requisitos)
+
 - [Acesso al proyecto](#instrucciones-de-instalación)
 
 - [Desarrolladora](#desarrolladora)
@@ -18,24 +20,21 @@
 Como proyecto de prueba para evaluar el nivel de los participantes de la Hackaton J2D 2023 se me ha solicitado crear una API que permita a las personas usuarias consultar, adquirir, modificar y eliminar skins para
 un videojuego.
 
+
 ### Tecnologías 
-<br>
-<div>
-<img src="https://raw.githubusercontent.com/jmnote/z-icons/master/svg/php.svg" alt="Php" width="40" height="40"/>
-<img src="https://profilinator.rishav.dev/skills-assets/laravel-plain-wordmark.svg" alt="Laravel" width="40" height="40"/>
-<img src="https://toddsmithsalter.com/content/images/2020/12/All_c0525fe15a8bd68c9fbd762831ef9959_2000.jpg" alt="Sanctum" width="60" height="40"/>
-</div>
-<br>
+
+- PHP
+- Laravel
+- Laravel/Sanctum
+  
 
 ### Herramientas
-<br>
-<div>
-<img src="https://w7.pngwing.com/pngs/512/824/png-transparent-visual-studio-code-hd-logo-thumbnail.png" alt="vscode" width="40" heigth="40"/>
-<img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="Git" width="40" height="40"/>
-<img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub" width="40" heigth="40"/>
-<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4oPV5NAgI8n7_7ogdNYQkPZgPNuAWWFB73Q&usqp=CAU" alt="mamp" width="40" heigth="40"/>
-</div>
-<br>
+
+- Visual Studio Code
+- Git
+- Github
+- MAMP
+- MySQL
 
 
 ### Versiones
@@ -43,6 +42,11 @@ un videojuego.
 -   php: 8.1
 -   laravel/framework: 10.10
 -   laravel/sanctum: 3.3
+
+
+## Requisitos
+
+- Debes tener instalado Apache mediante XAMPP o MAMP, Composer y MySQL para poder correr la aplicación
 
 
 ## Instrucciones de instalación
@@ -54,7 +58,7 @@ un videojuego.
 
 - Abre el proyecto en tu editor de código y en la terminal ingresa al directorio del proyecto `./server`.
 - Instala las dependencias mediante el comando `composer install`.
-- Crea un archivo .env a partir del archivo .env.example. y agrega tu key.
+- Crea un archivo .env a partir del archivo .env.example. y agrega tu variable de entorno `APP_KEY`.
 - Crea tu base de datos en mysql y configura el apartado de la base de datos en el archivo .env.
 - Ejecuta las migraciones para crear las tablas de la base de datos `php artisan migrate`.
 - Ejecuta los seeders para rellenar las tablas de la base de datos `php artisan db:seed`.
@@ -65,7 +69,9 @@ un videojuego.
 
 - Abre postman u otra herramienta que utilices para testear APIs.
 - Crea un request con la ruta que desees testear y rellena los campos necesarios. 
-
+- Ten en cuenta que las rutas POST/skins/buy, GET/skins/myskins, PUT/skins/color y DELETE/skins/delete/{id} requieren de un token en el header Authorization para lo cual tienes que registrarte/loguearte previamente.
+- Puedes revisar la documentación detallada de cada ruta en [este link](https://documenter.getpostman.com/view/27825598/2s9YXe8je4).
+  
 
 ### Desarrolladora
 
